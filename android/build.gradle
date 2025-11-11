@@ -33,9 +33,7 @@ buildscript {
 }
 
 repositories {
-    maven {
-        url "https://mvnrepository.com/artifact/org.videolan.android"
-    }
+    mavenCentral()
     google()
     jcenter()
 }
@@ -44,5 +42,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.facebook.react:react-native:+"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'org.videolan.android:libvlc-all:3.6.3'
+
+    // LibVLC build that explicitly supports 16KB memory pages
+    // (io.github.mengzhidaren:vlc-android-sdk:3.6.3)
+    implementation 'io.github.mengzhidaren:vlc-android-sdk:3.6.3'
 }
